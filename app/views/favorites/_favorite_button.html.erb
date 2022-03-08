@@ -1,3 +1,4 @@
+<div style="float:left;">
 <% if current_user.favorite?(micropost) %>
   <%= form_with(model: current_user.favorites.find_by(micropost_id: micropost.id, user_id: current_user.id), method: :delete) do |f| %>
     <%= hidden_field_tag :micropost_id, micropost.id %>
@@ -9,3 +10,4 @@
     <%= f.submit 'Favorite', class: 'btn btn-primary btn-sm' %>
   <% end %>
 <% end %>
+</div>
